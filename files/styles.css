@@ -87,16 +87,15 @@
     }
 
     .options label {
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-    }
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  white-space: nowrap; /* Prevent line breaks */
+}
 
-    .options input {
-      margin-right: 10px;
-      accent-color: #0284c7;
-    }
+.options input[type="radio"] {
+  margin-right: 10px; /* Ensure space between bullet and text */
+}
 
     .message {
       text-align: center;
