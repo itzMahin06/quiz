@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Exam System</title>
+  <title> Quiz by Mahin </title>
   <link rel="stylesheet" href="files/styles.css">
 </head>
 <body>
@@ -13,9 +13,9 @@
     </div>
     <div class="timer" id="timer">Time Left: 10:00</div>
     <form id="quizForm">
-      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="text" id="name" placeholder=" তোমার সম্পূর্ণ নাম লিখো " required>
       <select id="batch" required>
-        <option value="" disabled selected>Select Batch</option>
+        <option value="" disabled selected> তুমি কোন ব্যাচের </option>
         <option value="HSC 24"> এইচএসসি ২৪ </option>
         <option value="HSC 25"> এইচএসসি ২৫ </option>
         <option value="HSC 26"> এইচএসসি ২৬ </option>
@@ -26,6 +26,8 @@
         <option value="no"> না </option>
       </select>
       <input type="email" id="email" placeholder=" তোমার ইমেইল আইডি লিখো " required>
+     <h2> প্রশ্নাবলী </h2>
+      <p> প্রত্যেকটি প্রশ্নের উত্তর দাগাতে হবে। নেগেটিভ মার্কিং: ০.২৫ </p>
       <div id="questions"></div>
       <button type="submit"> উত্তর সাবমিট করো </button>
     </form>
