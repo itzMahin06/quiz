@@ -13,7 +13,7 @@
 ];
 
     const timerElement = document.getElementById("timer");
-    let timeLeft = 600; // Timer in seconds
+    let timeLeft = 43200; // Timer in seconds
 
     function updateTimer() {
       const minutes = Math.floor(timeLeft / 60);
