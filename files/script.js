@@ -123,4 +123,4 @@ form.addEventListener("submit", async (e) => {
 });
 
 // Load questions from a specific file (update path for different subjects)
-loadQuestions("./questions/math/questions.js");
+loadQuestions("./questions/biology/questions.js");
