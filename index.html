@@ -3,41 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> QUIZ by Mahin </title>
-<link rel="stylesheet" href="files/styles.css">  
+  <title>Quiz Exam System</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>Quiz Exam System</h1>
+      <h1> কুইজ টাইম </h1> 
     </div>
-
     <div class="timer" id="timer">Time Left: 10:00</div>
-
     <form id="quizForm">
       <input type="text" id="name" placeholder="Full Name" required>
       <select id="batch" required>
         <option value="" disabled selected>Select Batch</option>
-        <option value="HSC 24">HSC 24</option>
-        <option value="HSC 25">HSC 25</option>
-        <option value="HSC 26">HSC 26</option>
+        <option value="HSC 24"> এইচএসসি ২৪ </option>
+        <option value="HSC 25"> এইচএসসি ২৫ </option>
+        <option value="HSC 26"> এইচএসসি ২৬ </option>
       </select>
       <select id="secondAttempt" required>
-        <option value="" disabled selected>Second Attempt?</option>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
+        <option value="" disabled selected> সেকেন্ড টাইমার? </option>
+        <option value="yes"> হ্যাঁ </option>
+        <option value="no"> না </option>
       </select>
-      <input type="email" id="email" placeholder="Email" required>
-
+      <input type="email" id="email" placeholder=" তোমার ইমেইল আইডি লিখো " required>
       <div id="questions"></div>
-
-      <button type="submit">Submit</button>
+      <button type="submit"> উত্তর সাবমিট করো </button>
     </form>
-
-    <div class="message" id="message" style="display: none;">Answer sent successfully. Waiting for your result.</div>
+    <div class="message" id="message" style="display: none;"> তোমার উত্তরগুলো জমা হয়েছে। খুব শীঘ্রই তোমার রেজাল্ট ইমেইলে চলে যাবে </div>
   </div>
-<script src="files/script.js"></script>
-<script src="question/bio1.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
