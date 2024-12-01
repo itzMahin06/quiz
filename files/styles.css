@@ -47,6 +47,7 @@
       border-radius: 8px;
       border: none;
       outline: none;
+        font-family: 'Kalpurush', sans-serif;
     }
 
     form input, form select {
@@ -55,6 +56,7 @@
     }
 
     form button {
+        font-family: 'Kalpurush', sans-serif;
       background-color: #0284c7;
       color: #ffffff;
       font-weight: bold;
@@ -71,17 +73,20 @@
     }
 
     .question p {
+        font-family: 'Kalpurush', sans-serif;
       font-weight: bold;
       margin-bottom: 10px;
     }
 
     .options {
+        font-family: 'Kalpurush', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
     }
 
     .options label {
+        font-family: 'Kalpurush', sans-serif;
       margin-bottom: 8px;
       display: flex;
       align-items: center;
