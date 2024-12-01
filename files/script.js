@@ -39,7 +39,7 @@
       q.options.forEach((opt, i) => {
         optionsDiv.innerHTML += `
           <label>
-            <input type="radio" name="q${index}" value="${i}" required> ${opt}
+            <input type="radio" name="q${index}" value="${i}"> ${opt}
           </label>
         `;
       });
