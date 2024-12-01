@@ -13,7 +13,7 @@ const mcqQuestions = [
 ];
 
 const timerElement = document.getElementById("timer");
-let timeLeft = 10; // Timer in seconds
+let timeLeft = 1000; // Timer in seconds
 let timer; // Declare timer variable in global scope
 
 function updateTimer() {
