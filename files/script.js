@@ -1,8 +1,11 @@
 // Sample Questions
     const mcqQuestions = [
-      { question: "What is 2 + 2?", options: ["1", "2", "3", "4"], answer: 3 },
-      { question: "What is the capital of France?", options: ["Paris", "Rome", "Madrid", "Berlin"], answer: 0 },
-      // Add more questions as needed
+      { question: "উদ্ভিদের বৈজ্ঞানিক নামের ভাষা?", options: ["গ্রীক", "ইটালিক", "ল্যাটিন", "কোনোটি নয়"], answer: 2 }, 
+{ question: "মানবদেহের দীর্ঘতম কোষ কোনটি?", options: ["স্নায়ু কোষ", "রক্ত কোষ", "যকৃত কোষ", "পেশী কোষ"], answer: 0 },
+{ question: "কোনটি কোষের বর্জ্য পদার্থ?", options: ["উদ্বায়ী তেল", "ট্যানিন", "ল্যাটেক্স", "সবগুলো"], answer: 3 },
+{ question: "এন্ডোপ্লাজমিক রেটিকুলামের পর্দা কোন জাতীয়?", options: ["প্রোটিন", "লিপিড", "লিপোপ্রোটিন", "ফসপোলিপিড"], answer: 3 },
+{ question: "উদ্ভিদ কোষের কার্বোহাইড্রেট ফ্যাক্টরি হলো-", options: ["লাইসোজোম", "রাইবোজোম", "গলজি বডি", "এন্ডোপ্লাজমিক রেটিকুলাম"], answer: 2 }, 
+{ question: "কোষের সাইটোপ্লাজমে কোনটি বেশি পরিমাণে থাকে?", options: ["শর্করা", "পানি", "চর্বি", "প্রোটিন"], answer: 1 },
     ];
 
     const timerElement = document.getElementById("timer");
