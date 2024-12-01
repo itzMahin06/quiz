@@ -91,9 +91,9 @@ h2 {
 
     .options label {
         font-family: 'Kalpurush', sans-serif;
-      display: inline-block;
-  width: 45%;
-  margin: 5px 0;
+margin-bottom: 8px;
+      display: flex;
+      align-items: left;
       cursor: pointer;
     }
 
