@@ -13,7 +13,7 @@
       <h1> কুইজ টাইম </h1> 
     </div>
    <div class="timer"> Quiz by Mahin </div> 
- <form id="quizForm">
+<!-- <form id="quizForm">
       <input type="text" id="name" placeholder=" তোমার সম্পূর্ণ নাম লিখো " required>
       <select id="batch" required>
         <option value="" disabled selected> তুমি কোন ব্যাচের </option>
@@ -26,71 +26,18 @@
         <option value="yes"> হ্যাঁ </option>
         <option value="no"> না </option>
       </select>
-      <input type="email" id="email" placeholder=" তোমার ইমেইল আইডি লিখো " required> 
+      <input type="email" id="email" placeholder=" তোমার ইমেইল আইডি লিখো " required> -->
      
-  <!--    <p class="message"> কারিগরি উন্নয়নের জন্য এক্সাম সাইট ১২ ঘন্টা বন্ধ থাকবে। আমাদের এক্সাম সাইটের জন্য প্রশ্ন টাইপিস্ট লাগবে। যারা কাজ করতে আগ্রহী তারা ইমেইল করুন। info@itzmahin.my.id  </p> 
-<div style="pointer-events: none;left:0; width:100%; height:0; position:relative; padding-bottom:25%; margin:0 auto"><iframe src="https://www.tickcounter.com/widget/countdown/6224238" style="top:0; left:0; width:100%; height:100%; position:absolute; border:0; overflow:hidden" title="Open within"></iframe></div>-->
-      <div id="questions"></div>
+      <p class="message"> কারিগরি উন্নয়নের জন্য এক্সাম সাইট ১২ ঘন্টা বন্ধ থাকবে। আমাদের এক্সাম সাইটের জন্য প্রশ্ন টাইপিস্ট লাগবে। যারা কাজ করতে আগ্রহী তারা ইমেইল করুন। info@itzmahin.my.id  </p> 
+<div style="pointer-events: none;left:0; width:100%; height:0; position:relative; padding-bottom:25%; margin:0 auto"><iframe src="https://www.tickcounter.com/widget/countdown/6224238" style="top:0; left:0; width:100%; height:100%; position:absolute; border:0; overflow:hidden" title="Open within"></iframe></div>
+   <!--   <div id="questions"></div>
       <button type="submit"> উত্তর সাবমিট করো </button> 
-    </form>
+    </form> -->
     <div class="message" id="message" style="display: none;"> তোমার উত্তরগুলো জমা হয়েছে। খুব শীঘ্রই তোমার রেজাল্ট ইমেইলে চলে যাবে </div> 
-<p>©2024 QUIZ by Mahin </p>
+<p class="ft"> ©2024 QUIZ by Mahin </p>
   </div>
   <script src="files/script.js"></script>
   <script src="files/disable-copy.js"></script>
-  <script> 
-emailjs.init("kVh15Ngyus594m84c"); // Replace with your EmailJS User ID
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-
-  let correct = 0;
-  let wrong = 0;
-  const userAnswers = [];
-
-  mcqQuestions.forEach((q, index) => {
-    const answer = document.querySelector(`input[name="q${index}"]:checked`);
-    if (answer) {
-      userAnswers.push({ question: q.question, selected: q.options[parseInt(answer.value)] });
-      if (parseInt(answer.value) === q.answer) {
-        correct++;
-      } else {
-        wrong++;
-      }
-    }
-  });
-
-  const totalMarks = correct - wrong * 0.25;
-
-  // Prepare the answers as a formatted string
-  const answers = userAnswers
-    .map((ans, index) => `Q${index + 1}: ${ans.question}\nSelected: ${ans.selected}`)
-    .join("\n");
-
-  // EmailJS template parameters
-  const templateParams = {
-    name: name,
-    email: email,
-    totalMarks: totalMarks.toFixed(2),
-    correct: correct,
-    wrong: wrong,
-    answers: answers,
-  };
-
-  // Send the email silently
-  emailjs
-    .send("service_thc8anb", "template_3uvwr5r", templateParams)
-    .then((response) => {
-      console.log("Email sent successfully:", response.status, response.text);
-    })
-    .catch((error) => {
-      console.error("Failed to send email:", error);
-    });
-});
-</script>
 
 </body>
 </html>
