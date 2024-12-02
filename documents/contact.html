@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Me</title>
+
+  <style>
+
+    /* Reset and Basic Styling */
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+      box-sizing: border-box;
+
+    }
+
+    body {
+
+      font-family: 'Roboto', sans-serif;
+
+      background: linear-gradient(135deg, #8e9eab, #eef2f3);
+
+      color: #333;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      min-height: 100vh;
+
+      padding: 20px;
+
+    }
+
+    /* Contact Form Container */
+
+    .contact-container {
+
+      background: white;
+
+      padding: 30px;
+
+      border-radius: 15px;
+
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+      max-width: 450px;
+
+      width: 100%;
+
+      text-align: center;
+
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    }
+
+    .contact-container:hover {
+
+      transform: translateY(-5px);
+
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+
+    }
+
+    /* Header Image */
+
+    .image-container img {
+
+      width: 100%;
+
+      max-width: 500px;
+
+      border-radius: 15px;
+
+      margin-bottom: 20px;
+
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    }
+
+    /* Heading */
+
+    .contact-container h2 {
+
+      font-size: 24px;
+
+      color: #444;
+
+      margin-bottom: 10px;
+
+      letter-spacing: 1px;
+
+    }
+
+    .contact-container p {
+
+      font-size: 14px;
+
+      color: #666;
+
+      margin-bottom: 20px;
+
+      line-height: 1.5;
+
+    }
+
+    .contact-email {
+
+      font-size: 16px;
+
+      color: #E32C2C;
+
+      font-weight: bold;
+
+      margin-bottom: 20px;
+
+      text-decoration: none;
+
+      display: inline-block;
+
+      background: #f9f9f9;
+
+      padding: 5px 10px;
+
+      border-radius: 5px;
+
+      transition: background 0.3s ease;
+
+    }
+
+    .contact-email:hover {
+
+      background: #f1f1f1;
+
+    }
+
+    /* Form Input Styling */
+
+    .contact-container label {
+
+      display: block;
+
+      font-size: 14px;
+
+      font-weight: bold;
+
+      margin-bottom: 5px;
+
+      color: #555;
+
+      text-align: left;
+
+    }
+
+    .contact-container input,
+
+    .contact-container textarea {
+
+      width: 100%;
+
+      padding: 12px;
+
+      margin-bottom: 15px;
+
+      border: 1px solid #ddd;
+
+      border-radius: 8px;
+
+      font-size: 14px;
+
+      transition: border 0.3s ease;
+
+    }
+
+    .contact-container input:focus,
+
+    .contact-container textarea:focus {
+
+      border-color: #E32C2C;
+
+      outline: none;
+
+    }
+
+    .contact-container textarea {
+
+      resize: none;
+
+      height: 120px;
+
+    }
+
+    /* Submit Button Styling */
+
+    .contact-container button {
+
+      width: 100%;
+
+      padding: 12px;
+
+      background: linear-gradient(135deg, #E32C2C, #D02929);
+
+      color: white;
+
+      border: none;
+
+      border-radius: 8px;
+
+      font-size: 16px;
+
+      cursor: pointer;
+
+      transition: background 0.3s ease;
+
+    }
+
+    .contact-container button:hover {
+
+      background: linear-gradient(135deg, #D02929, #E32C2C);
+
+    }
+
+    /* Feedback Messages */
+
+    .success-message,
+
+    .error-message {
+
+      text-align: center;
+
+      font-size: 14px;
+
+      margin-top: 10px;
+
+      display: none;
+
+    }
+
+    .success-message {
+
+      color: #2ecc71;
+
+    }
+
+    .error-message {
+
+      color: #e74c3c;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Contact Form Container -->
+
+  <div class="contact-container">
+
+    <!-- Image Section -->
+
+    <div class="image-container">
+
+      <img src="https://files.jhsite.com/images/Contact_us.png" alt="Contact Us" />
+
+    </div>
+
+    <!-- Heading and Email -->
+
+    <h2>Contact Me</h2>
+
+    <p>
+
+      We’d love to hear from you! Whether you have a question, feedback, or a collaboration idea, this is the place to get in touch. Please fill out the form with your name, email, and message, and let us know how we can assist you. Your input is invaluable to us, and we’re committed to responding as quickly as possible.
+
+    </p>
+
+    <p>
+
+      For urgent inquiries, don’t hesitate to include your phone number or social media links. We value every message and aim to provide prompt and helpful responses to all your concerns. Let’s connect and create something meaningful together!
+
+    </p>
+
+    
+
+    <p>
+
+      Otherwise Email Me!
+
+    </p>
+
+    <a href="mailto:info@itzmahin.my.id" class="contact-email">
+
+      info@itzmahin.my.id
+
+    </a>
+
+    <!-- Contact Form -->
+
+    <form id="contactForm">
+
+      <label for="name">Your Name</label>
+
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+      <label for="email">Your Email</label>
+
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+      <label for="mobile">Your Mobile / Social Accounts Links</label>
+
+      <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile number / Social Links" />
+
+      <label for="message">Your Message</label>
+
+      <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+
+      <button type="submit">Send Message</button>
+
+    </form>
+
+    <!-- Feedback messages -->
+
+    <div class="success-message" id="successMessage">Message sent successfully!</div>
+
+    <div class="error-message" id="errorMessage">Failed to send message. Try again.</div>
+
+  </div>
+
+  <script>
+    
+    // Telegram Bot Token and Chat ID
+
+    const botToken = "7103947496:AAHML7jmbVns5nGty2CgigFQUbHkBfUu9XM"; // Add your bot token
+
+    const chatId = "-1002095560628"; // Add your chat ID
+
+    document.querySelector("#contactForm").addEventListener("submit", function (e) {
+
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+
+      const email = document.getElementById("email").value;
+
+      const mobile = document.getElementById("mobile").value || "N/A";
+
+      const message = document.getElementById("message").value;
+
+      const telegramMessage = `
+
+        📝 New Message:
+        - 👨‍🦱 Name: ${name}
+        - ✉️ Email: ${email}
+        - 📞 Mobile / Social: ${mobile}
+        - 📲 Message: ${message}
+        [🚛 Sent From quiz by mahin]
+      `;
+
+      fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+
+        method: "POST",
+
+        headers: { "Content-Type": "application/json" },
+
+        body: JSON.stringify({
+
+          chat_id: chatId,
+
+          text: telegramMessage,
+
+        }),
+
+      })
+
+        .then((response) => {
+
+          if (response.ok) {
+
+            document.getElementById("successMessage").style.display = "block";
+
+            document.getElementById("errorMessage").style.display = "none";
+            
+            // Redirect user to another page after successful form submission
+
+            setTimeout(function () {
+
+              window.location.href = "https://itzmahin06.github.io/Contact-Me";
+
+            }, 3000); // Redirect after 3 seconds
+
+          } else {
+
+            document.getElementById("successMessage").style.display = "none";
+
+            document.getElementById("errorMessage").style.display = "block";
+
+          }
+
+        })
+
+        .catch(() => {
+
+          document.getElementById("successMessage").style.display = "none";
+
+          document.getElementById("errorMessage").style.display = "block";
+
+        });
+
+      document.getElementById("contactForm").reset();
+
+    });
+
+  </script>
+
+</body>
+
+</html>
