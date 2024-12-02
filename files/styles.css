@@ -152,3 +152,47 @@ footer .links a:hover {
   color: #0284c7;
 }
 
+
+/* Header Styles */
+.hheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #1e293b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  font-family: 'Kalpurush', sans-serif;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.hheader h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Adjust container to account for the fixed header */
+.container {
+  margin-top: 80px;
+}
+
+/* Ensure content does not overflow or overlap */
+body {
+  padding-top: 60px;
+}
+
