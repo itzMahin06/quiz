@@ -154,7 +154,7 @@ footer .links a:hover {
 
 
 /* Header Styles */
-.hheader {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -181,7 +181,7 @@ footer .links a:hover {
   margin-right: 10px;
 }
 
-.hheader h1 {
+.header h1 {
   font-size: 24px;
   font-weight: 700;
 }
