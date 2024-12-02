@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 24px;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .table-container {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 90%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        #htmlCode {
+            font-family: monospace;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            display: none;
+        }
+        .copy-success {
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Dynamic Table Generator</h1>
+
+    <label for="rows">Number of Rows:</label>
+    <input type="number" id="rows" min="1" placeholder="Enter the number of rows">
+
+    <label for="cols">Number of Columns:</label>
+    <input type="number" id="cols" min="1" placeholder="Enter the number of columns">
+
+    <div class="buttons">
+        <button id="generateButton">Generate Table</button>
+    </div>
+
+    <div class="table-container" id="tableContainer"></div>
+
+    <div class="buttons" id="htmlButtons" style="display: none;">
+        <button id="generateCodeButton">Generate HTML Code</button> <br> 
+        <button id="copyCodeButton">Copy HTML Code</button>
+    </div>
+
+    <div id="htmlCode"></div>
+    <div id="copySuccess" class="copy-success"></div>
+</div>
+<footer> ©itzMahin </footer>
+<script>
+    document.getElementById('generateButton').addEventListener('click', function() {
+        const rows = document.getElementById('rows').value;
+        const cols = document.getElementById('cols').value;
+
+        if (rows < 1 || cols < 1) {
+            alert("Please enter valid numbers for rows and columns.");
+            return;
+        }
+
+        generateTable(rows, cols);
+    });
+
+    document.getElementById('generateCodeButton').addEventListener('click', generateHTMLCode);
+    document.getElementById('copyCodeButton').addEventListener('click', copyHTMLCode);
+
+    function generateTable(rows, cols) {
+        let tableHTML = '<table>';
+        tableHTML += '<tr>';
+        for (let c = 1; c <= cols; c++) {
+            tableHTML += `<th>Column ${c}</th>`;
+        }
+        tableHTML += '</tr>';
+
+        for (let r = 1; r <= rows; r++) {
+            tableHTML += '<tr>';
+            for (let c = 1; c <= cols; c++) {
+                tableHTML += `<td><input type="text" id="cell-${r}-${c}"></td>`;
+            }
+            tableHTML += '</tr>';
+        }
+        tableHTML += '</table>';
+
+        document.getElementById('tableContainer').innerHTML = tableHTML;
+
+        document.getElementById('htmlButtons').style.display = 'block';
+        document.getElementById('htmlCode').style.display = 'none';
+        document.getElementById('copySuccess').innerText = '';
+    }
+
+    function generateHTMLCode() {
+        const tableRows = document.querySelectorAll('#tableContainer table tr');
+        let htmlCode = '<table>\n';
+
+        tableRows.forEach((row, rowIndex) => {
+            htmlCode += '  <tr>\n';
+            row.querySelectorAll('th, td').forEach((cell) => {
+                if (rowIndex === 0) {
+                    htmlCode += `    <th>${cell.textContent}</th>\n`;
+                } else {
+                    const input = cell.querySelector('input');
+                    const value = input && input.value.trim() ? input.value : '';
+                    htmlCode += `    <td>${value}</td>\n`;
+                }
+            });
+            htmlCode += '  </tr>\n';
+        });
+
+        htmlCode += '</table>';
+
+        document.getElementById('htmlCode').textContent = htmlCode;
+        document.getElementById('htmlCode').style.display = 'block';
+    }
+
+    function copyHTMLCode() {
+        const htmlCode = document.getElementById('htmlCode').textContent;
+        navigator.clipboard.writeText(htmlCode).then(() => {
+            document.getElementById('copySuccess').innerText = 'HTML Code copied to clipboard!';
+        }).catch(() => {
+            alert('Failed to copy the code.');
+        });
+    }
+</script>
+
+</body>
+</html>
