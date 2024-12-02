@@ -18,12 +18,12 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     }
 
-    .theader {
+    .header {
       text-align: center;
       margin-bottom: 20px;
     }
 
-    .theader h1 {
+    .header h1 {
       font-size: 24px;
       font-weight: 700;
     }
