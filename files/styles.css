@@ -171,12 +171,12 @@ footer .links a:hover {
   font-family: 'Kalpurush', sans-serif;
 }
 
-.hlogo {
+.logo {
   display: flex;
   align-items: center;
 }
 
-.hlogo-img {
+.logo-img {
   width: 20px;
   height: auto;
   margin-right: 10px;
