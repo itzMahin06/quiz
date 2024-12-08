@@ -86,16 +86,19 @@
 
       // Prepare data for Telegram
       let submissionData = `
-        New Quiz Submission:
+        #QUIZ:
         Name: ${name}
         Batch: ${batch}
         Email: ${email}
         Second Attempt: ${secondAttempt ? "Yes" : "No"}
+        
         Total Marks: ${totalMarks}
         Correct Answers: ${correct}
         Wrong Answers: ${wrong}
 
-        Answers:
+        The correct will share in our Telegram Group.
+
+        Your selected answer:
       `;
 
       userAnswers.forEach((answer, index) => {
