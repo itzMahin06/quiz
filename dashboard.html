@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Quiz by Mahin </title>
+   <style>
+        #google-form {
+            width: 100%;
+            height: 800px; /* Adjust height as needed */
+            border: none;
+        }
+    </style> 
   <link rel="stylesheet" href="files/styles.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
@@ -29,7 +36,7 @@
    <br> 
     <br>
 
-    <iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__S13OCdUNVlSU1dENTdDM1dPSjBEWFhNU0FZOTdGTi4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+    <iframe id="google-form" width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__S13OCdUNVlSU1dENTdDM1dPSjBEWFhNU0FZOTdGTi4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
     
 <p class="ft"> ©2024 QUIZ by Mahin </p>
   </div>
@@ -50,7 +57,27 @@
     <a href="documents/rules.html">Rules</a> 
   </div>
 </footer>
+ <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let iframe = document.getElementById("google-form");
 
+            iframe.onload = function () {
+                let css = `
+                    div[class*='freebirdFormviewerViewHeaderHeader'] { display: none !important; }
+                    div[class*='freebirdFormviewerViewFooterDisclaimer'] { display: none !important; }
+                `;
+
+                let style = document.createElement("style");
+                style.innerHTML = css;
+
+                try {
+                    iframe.contentWindow.document.head.appendChild(style);
+                } catch (error) {
+                    console.log("Iframe modification is blocked due to CORS policy.");
+                }
+            };
+        });
+    </script>
   
   <script src="files/script.js"></script>
   <script src="files/disable-copy.js"></script>
